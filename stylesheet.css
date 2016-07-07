@@ -1,0 +1,79 @@
+.everything{
+	margin-right: 30%;
+	margin-left: 25%;
+	font-family: helvetica;
+}
+
+.image{
+	position: relative;
+}
+.banner{
+	background: url(http://www.lovethispic.com/uploaded_images/27738-Breakfast.jpg);
+	background-size: cover;
+	height:390px;
+	width: 979px;
+}
+
+.banner h1{
+	font-family: helvetica;
+	color: gray;
+	top: 0px;
+	bottom: 0px;
+	text-align: center;
+	font-size: 50px;
+	height: 75px;
+	width:500px;
+	background-color: white;
+	border: 5px solid gray;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-content{
+	float: left;
+	position: absolute;
+	width: 40%;
+}
+
+.intro h2{
+	font-size: 26px;
+	color: gray;
+	height: 45px;
+	width: 70%;
+}
+
+.intro p{
+	font-size: 18px;
+	color:gray;
+	line-height: 30px;
+	width: 70%;
+}
+
+.intro span{
+	font-size: 14px;
+	color: gray;
+}
+
+.intro img{
+	background-size: cover;
+	width: 65%;
+}
+
+.sidenav {
+	width: 60%;
+	font-size: 20px;
+	color: gray;
+	float: right;
+	text-align: right;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.sidenav img{
+	width: 60%;
+
+}
+
+
+
+
