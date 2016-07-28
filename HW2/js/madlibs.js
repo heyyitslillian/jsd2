@@ -13,14 +13,14 @@ var generate = document.querySelector('.generate');
 var save     = document.querySelector('.save');
 var print    = document.querySelector('.print');
 var list     = document.querySelector('.list');
-
+var clear     = document.querySelector('.clear');
 
 // Events
 // ------------------------------------------
 generate.addEventListener('click', generateStartup);
 save.addEventListener('click', saveFavorite);
 print.addEventListener('click', printFavorites);
-
+clear.addEventListener('click', clearFavorites);
 
 // Event Listeners
 // ------------------------------------------
@@ -55,7 +55,7 @@ function saveFavorite() {
 }
 
 function printFavorites() {
-var favoritesText= " ";	
+var favoritesText= " ";
 // clear out favorites element
 	list.innerHTML = '';
 
@@ -75,6 +75,12 @@ favorites.forEach(concatenateFavs)
 	list.innerHTML = favoritesText;
 
 }
+
+function clearFavorites() {
+	favorites.pop();
+	console.log("one is removed");
+	list.innerHTML="The last one is removed";
+};
 
 // Init
 // ------------------------------------------
