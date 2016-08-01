@@ -2,6 +2,7 @@ var stopButton = document.querySelector(".stop-button");
 var slowButton = document.querySelector(".slow-button");
 var goButton = document.querySelector(".go-button");
 var cautionButton = document.querySelector(".caution-button");
+var timer;
 
 stopButton.addEventListener("click", stop);
 slowButton.addEventListener("click", slow);
@@ -14,6 +15,7 @@ function stop (e){
   light.classList.remove('changeLight');
   light.classList.remove('go');
   light.classList.remove('slow');
+  clearInterval(timer);
 }
 
 function slow (e){
@@ -21,6 +23,7 @@ function slow (e){
   light.classList.remove('go');
   light.classList.add('slow');
   light.classList.remove('stop');
+  clearInterval(timer);
 }
 
 function go (e){
@@ -29,6 +32,8 @@ function go (e){
   light.classList.remove('slow');
   light.classList.remove('stop');
   light.classList.remove('caution');
+  clearInterval(timer);
+
 }
 
 
@@ -37,16 +42,9 @@ function caution (e) {
   light.classList.remove('go');
   light.classList.remove('changeLight');
   
-  setInterval(function(){
+  timer = setInterval(function(i){
       light.classList.toggle("slow");
   },1000);
-  
-  if (stopButton){
-    window.clearInterval(cautionButton);
-  } else {setInterval(function(){
-      light.classList.toggle("slow");
-  },1000);}
-
 
 }
 
