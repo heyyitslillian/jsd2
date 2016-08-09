@@ -2,6 +2,7 @@ var stopButton = document.querySelector(".stop-button");
 var slowButton = document.querySelector(".slow-button");
 var goButton = document.querySelector(".go-button");
 var cautionButton = document.querySelector(".caution-button");
+var runButton = document.querySelector(".run-button");
 var light = document.getElementById('traffic-light');
 var timer;
 
@@ -9,6 +10,7 @@ stopButton.addEventListener("click", stop);
 slowButton.addEventListener("click", slow);
 goButton.addEventListener("click", go);
 cautionButton.addEventListener("click", caution);
+runButton.addEventListener("click", run);
 
 
 function stop (e){
@@ -48,4 +50,15 @@ function caution (e) {
   },1000);
 
 }
+
+function run (e) {
+  light.classList.add('stop');
+  light.classList.remove('go');
+  light.classList.remove('slow');
+  clearInterval(timer);
+
+  
+
+}
+
 

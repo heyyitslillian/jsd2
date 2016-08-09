@@ -13,9 +13,11 @@ decrease.addEventListener('click', minus);
 setScore.addEventListener('click', set);
 
 
+
 function add () {
 	//e.preventDefault();
 	console.log('add');
+
 	score = score + x;
 	if (score < 0){
 		scoreboard.innerHTML="no negative";
