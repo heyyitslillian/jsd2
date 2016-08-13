@@ -17,20 +17,31 @@
 	<input class="zip" placeholder="Zip code">
 </form>
 
-<ul class="results">
+<div class="header"></div>
 
-<script id="restaurant-template" type="text/x-handlebars-template">
+<ul class="results"></ul>
 
-	// {{#each}}
-	// <li>
+<script id="header-template" type="text/x-handlebars-template">
 
-	// 	<img src="{{image_url}}">
-	// 	<h2>{{name}}</h2>
-	// 	<p>{{address}}</p>
+	<p>{{total_entries}} results found in 20958</p>
+	<p>{{current_page}}</p>
+</script> 
 
-	// </li>
-	// {{/each}}
+<script id = "restaurant-template" type="text/x-handlebars-template">
 
+	{{#each this}}
+		<li>
+			<img src="{{image_url}}">
+			<h2>{{ name }}</h2>
+			<p>{{ address }}</p>
+			<p>
+				<a href="{{reserve_url}}">Make Reservation</a>
+
+			</p>
+	
+		</li>
+	{{/each}}
+</script>
 <!--
 	<li>
 		<img src="http://www.thaifoodandtravel.com/images/pad-thai-04.jpg">
@@ -39,12 +50,9 @@
 	</li>
 -->
 
-</ul>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-
 <script src="js/content.js"></script>
 <script src="js/foodie.js"></script>
 

@@ -84,7 +84,6 @@ var movieUrl = "http://www.imdb.com/title/";
 
 
 function getDetails (event) {
-		
 	console.log(getDetails);
 
 	if (event.target.nodeName != "LI"){
@@ -102,13 +101,11 @@ function getDetails (event) {
 function updateDetails (e) {
 
 
+
 	detailsPoster.src = e.Poster;
 	detailsDescription.textContent = e.Plot;
 	detailsTitle.textContent = e.Title;
 	detailsLink.href = "http://www.imdb.com/title/" + e.imdbID;
-
-
-
 
 }
 
