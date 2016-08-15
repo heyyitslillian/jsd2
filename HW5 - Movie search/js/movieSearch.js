@@ -33,21 +33,26 @@ function updateMovies (json){
 function createMovies (item){
 
 	//Step 1.1: Create the elements that we will ultimately be pushing
-var li = document.createElement("li");
-var img = document.createElement("img");
-var p = document.createElement("p");
+	var li = document.createElement("li");
+	var img = document.createElement("img");
+	var p = document.createElement("p");
 
 	//Step 1.2: In these empty elements we just created above, what "materials" do we want in them?
-img.src = item.Poster;
-p.textContent = item.Title;
-li.id = item.imdbID;
+	if (item.Poster != "N/A") {
+		img.src = item.Poster;
+	} else {
+		img.src = "https://s-media-cache-ak0.pinimg.com/564x/ed/0e/68/ed0e68d1f8a0a1f4b5582ed180cce761.jpg";
+	}
+	
+	p.textContent = item.Title;
+	li.id = item.imdbID;
 
 
 
 	//Step 1.3: Push our new elements with content into what? 
-results.appendChild(li);
-li.appendChild(img);
-li.appendChild(p);
+	results.appendChild(li);
+	li.appendChild(img);
+	li.appendChild(p);
 
 }
 
@@ -55,18 +60,23 @@ li.appendChild(p);
 //Step 3: Get data for movie results
 
 function getMovies (event){
-	
 	event.preventDefault();
-
+	
 	//Step 3.1: We want to grab whatever search value entered in the search box, then append it to the last string in the api url 
 	var search = movieSearch.value;
-	console.log(search);
 
-	//Step 3.2: Appending the search value into api string
-	var url = "http://www.omdbapi.com/?s=" + search;
+	if (search) {
+		console.log(search);
 
-	//Step 3.3: So we're "getting the data", not we must update the json 
-	$.getJSON(url, updateMovies);
+		//Step 3.2: Appending the search value into api string
+		var url = "http://www.omdbapi.com/?s=" + search;
+
+		//Step 3.3: So we're "getting the data", not we must update the json 
+		$.getJSON(url, updateMovies);
+	} else {
+		console.log("wrong!");
+	}
+
 
 }
 
@@ -100,16 +110,19 @@ function getDetails (event) {
 
 function updateDetails (e) {
 
-
-
-	detailsPoster.src = e.Poster;
+	if (e.Poster != "N/A") {
+		detailsPoster.src = e.Poster;
+	} else {
+		detailsPoster.src="https://s-media-cache-ak0.pinimg.com/564x/ed/0e/68/ed0e68d1f8a0a1f4b5582ed180cce761.jpg";
+	}
+	
 	detailsDescription.textContent = e.Plot;
 	detailsTitle.textContent = e.Title;
 	detailsLink.href = "http://www.imdb.com/title/" + e.imdbID;
 
 }
 
-	
+
 
 
 

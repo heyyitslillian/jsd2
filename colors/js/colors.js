@@ -15,7 +15,7 @@ ul.addEventListener("click", clickColor);
 //----------
 function clickColor (e) {
 //	console.log("clickColor",e.target);
-
+console.log(e);
 
 //event delegation
 //"return early" if an li element
@@ -24,10 +24,15 @@ if (e.target.tagName != "LI"){
 	return;
 	}
 
-	console.log(e.target.dataset.color)
-	change(e.target.dataset.color);
+	var dataColor = e.target.dataset.color;
+	console.log(dataColor)
+	change(dataColor);
 }
 
+//var change = function(color) {
+//	console.log("change", color);
+//	body.className = color;
+//}
 
 function change (color) {
 	console.log("change", color);

@@ -45,7 +45,7 @@ function go (e){
       clearInterval(timer);
   } else {
     // this means we got here via 'stop'
-    timer = setTimeout(slow, 3000);
+    timer = setTimeout(slow, 1000);
   }
   light.classList.remove('changeLight');
   light.classList.add('go');
