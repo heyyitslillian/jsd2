@@ -21,4 +21,8 @@ input {
 	height: 60px;
 	margin-right: 20px;
 }
-
+.header {
+	border-bottom: 1px solid grey;
+	padding-bottom: 5px;
+	margin: 20px 0;
+}
