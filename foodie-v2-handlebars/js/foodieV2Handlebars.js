@@ -5,7 +5,7 @@ var zip = document.querySelector("form .zip");
 var results = document.querySelector(".results");
 var header = document.querySelector(".header");
 
-
+// handlebars
 var headerTemplate = document.querySelector("#header-template");
 var restaurantTemplate = document.querySelector("#restaurant-template");
 
