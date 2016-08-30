@@ -16,8 +16,6 @@ var articleStuff;
 var articleTemplate = document.querySelector("#article-template");
 var popupTemplate = document.querySelector("#popup-template");
 
-
-
 dropdown.addEventListener('click', getArticles);
 results.addEventListener('click', getLoader);
 close.addEventListener('click', closePopUp);
