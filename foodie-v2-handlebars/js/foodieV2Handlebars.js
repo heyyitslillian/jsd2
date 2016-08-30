@@ -49,7 +49,11 @@ function updateRestaurants(json) {
 }
 
 
+//technique 1
+	template = Handlebars.compile(restaurantTemplate.innerHTML);
+	results.innerHTML = template(json.restaurants);
 
+//
 
 
 

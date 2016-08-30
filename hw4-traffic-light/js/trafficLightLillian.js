@@ -1,4 +1,4 @@
-var stopButton = document.querySelector(".stop-button");
+pvar stopButton = document.querySelector(".stop-button");
 var slowButton = document.querySelector(".slow-button");
 var goButton = document.querySelector(".go-button");
 var cautionButton = document.querySelector(".caution-button");
